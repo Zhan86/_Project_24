@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 
 public class ComparatorUtils {
+    private ComparatorUtils () {}
     public static Comparator<Student> getStudentComparator(StudentComparatorType comparatorType) {
         switch (comparatorType) {
             case FULL_NAME:
