@@ -1,9 +1,16 @@
 package org.example;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
+
 public class Student {
-    private String fullName;
+    @SerializedName("studentUniversityId")
     private String universityId;
+    @SerializedName("studentFullName")
+    private String fullName;
+    @SerializedName("studentCourseNumber")
     private int currentCourseNumber;
+    @SerializedName("studentAvgExamScore")
     private float avgExamScore;
 
 
@@ -11,7 +18,7 @@ public class Student {
     }
 
 
-    public Student(String fullName, String universityId, int currentCourseNumber, float avgExamScore) {
+    public Student(String universityId, String fullName, int currentCourseNumber, float avgExamScore) {
         this.fullName = fullName;
         this.universityId = universityId;
         this.currentCourseNumber = currentCourseNumber;
@@ -61,4 +68,7 @@ public class Student {
                 ", avgExamScore=" + avgExamScore +
                 '}';
     }
+
+
+
 }
