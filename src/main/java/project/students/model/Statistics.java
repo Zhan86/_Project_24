@@ -1,12 +1,22 @@
-package org.example;
-import java.math.BigDecimal;
-import java.util.List;
+package project.students.model;
+import project.students.enums.StudyProfile;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
+import java.util.List;
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Statistics {
+    @XmlElement(name = "universityMainProfile")
     private StudyProfile studyProfile;
+    @XmlElement(name = "studentAvgScore")
     private float averageExamScore;
+    @XmlTransient
     private int studentCount;
+    @XmlTransient
     private int universityCount;
+    @XmlTransient
     private List<String> universityNames;
 
     public Statistics(StudyProfile studyProfile, float averageExamScore, int studentCount, int universityCount, List<String> universityNames) {

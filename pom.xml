@@ -54,6 +54,21 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.11.1</version>
         </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version> <!-- Use the latest version available -->
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>2.3.0.1</version> <!-- Use the version that matches your JAXB API version -->
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.3.1</version> <!-- Use the version that matches your JAXB API version -->
+        </dependency>
 
 
     </dependencies>

@@ -1,4 +1,9 @@
-package org.example;
+package project.students.util;
+import project.students.model.Statistics;
+import project.students.model.Student;
+import project.students.enums.StudyProfile;
+import project.students.model.University;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;

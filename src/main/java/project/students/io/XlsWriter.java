@@ -1,15 +1,23 @@
-package org.example;
+package project.students.io;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import project.students.model.Statistics;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class XlsWriter {
+    private static final Logger logger = Logger.getLogger(XlsWriter.class.getName());
 
     public static void generateAndWriteTable(List<Statistics> statisticsList, String filePath) {
+
+        logger.log(Level.INFO, "Excel file writing started");
+
         try (Workbook workbook = new XSSFWorkbook()) {
             Sheet sheet = workbook.createSheet("Statistics");
 
@@ -52,7 +60,9 @@ public class XlsWriter {
                 workbook.write(fileOut);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "New excel file writing failed", e);
+            return;
         }
+        logger.log(Level.INFO, "Excel writing finished successfully");
     }
 }

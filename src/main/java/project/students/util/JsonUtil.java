@@ -1,17 +1,12 @@
-package org.example;
+package project.students.util;
 
-import com.fasterxml.jackson.databind.MapperFeature;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.reflect.TypeToken;
+import project.students.model.Student;
+import project.students.model.University;
 
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public final class JsonUtil {
@@ -51,6 +46,10 @@ public final class JsonUtil {
 
     public static List<University> jsonToUniversityList(String json) {
         return new Gson().fromJson(json, new TypeToken<List<University>>() {}.getType());
+    }
+
+    public static String writeListToJson(List<?> list) {
+        return new GsonBuilder().setPrettyPrinting().create().toJson(list);
     }
 
 
